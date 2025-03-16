@@ -1,0 +1,419 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: DM Serif Text;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(pic.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.wrapper {
+    position:relative;
+    width: 66rem;
+    height: 45rem;
+    padding: 2rem;
+    perspective: 250rem;
+    animation: show-animate 2s forwards;
+    box-shadow: 5px 5px 55px hsl(0, 0%, 0.3%);
+   }
+   @keyframes show-animate {
+    0%, 30% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+   }
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgb(6, 226, 241);
+    box-shadow: rgb(234, 3, 34);
+    border-top-left-radius:  .6rem;
+    border-bottom-left-radius:  .6rem;
+    transform-origin: right;
+}
+.cover.cover-left {
+   z-index: -1;
+}
+.cover.cover-right{
+    z-index: 100;
+    transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+
+.cover.cover-right.turn {
+    transform: rotateY(180deg);
+}
+.book{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    perspective: 250rem;
+}
+.book .book-page {
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   background: rgb(246, 235, 235);
+   box-shadow: 0 0.2rem rgb(182, 9, 188);
+   display: flex;
+   padding: 2rem;
+   border: solid rgba(241, 8, 233, 0.062);
+}
+.book-page.page-left{
+  box-shadow: -.6rem .6rem .6rem rgba(0, 0, 0, 0.5);
+}
+.profile-page img{
+    width: 180px;
+    border-radius: 50%;
+    border: .1rem solid rgb(243, 6, 219);
+    margin-bottom: .8rem;
+}
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-page h1{
+    font-size: 2.7rem;
+    line-height: 1;
+}
+.profile-page h3{
+    font-size: 1.5rem;
+    color: rgb(119, 9, 222);
+}
+.profile-page p {
+    text-align: justify;
+}
+.profile-page .social-media{
+    margin: .6rem 0 .8rem;
+}
+.profile-page .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.0rem;
+    height: 2.0rem;
+    background: transparent;
+    border: .1rem solid rgb(243, 6, 219);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: rgb(220, 8, 223);
+    margin: 0 .2rem;
+}
+.profile-page .social-media a:hover{
+    background: rgb(141, 91, 242);
+    color: rgb(240, 8, 8);
+}
+.profile-page .social-media a:active{
+    background: green;
+}
+.btn-box{
+    margin: 2.0rem;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 9.5rem;
+    height: 3rem;
+    background: green;
+    border: .1rem solid rgb(243, 6, 219);
+    border-radius: .3rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    margin: 0.1rem;
+}
+.btn:hover{
+    background: rgb(210, 83, 233);
+    color: black;
+}
+.btn:active{
+    background: darkgreen;
+}
+
+
+
+.page-right {
+    position:absolute;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+
+
+
+.book-page .page-front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(246, 235, 235);
+    padding: 1.5rem 2rem;
+
+}
+.book-page .page-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(246, 235, 235);
+    padding: 1.5rem 2rem;
+
+}
+.book-page .page-front{
+    transform: rotateY(0deg) translateZ(1px);
+}
+.book-page .page-back{
+    transform: rotateY(180deg) translateZ(1px); 
+}
+.title{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.workeduc-box {
+    border-left: solid rgb(248, 7, 208);
+}
+.workeduc-box .workeduc-content{
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+.workeduc-box .workeduc-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.65rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: rgb(255, 0, 183);
+    border-radius: 50%;
+
+}
+.workeduc-content .year{
+    color: rgb(243, 5, 191);
+}
+.workeduc-content .year i{
+    margin-right: .4rem;
+}
+.number-page{
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: rotateX(-50%);
+}
+.next-page{
+    position: absolute;
+    align-items: center;
+    justify-content: absolute;
+    bottom: .9rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(122, 8, 230);
+    display: inline-flex;
+}
+.next-page:hover{
+    background: rgb(0, 234, 255);
+}
+.next-page:active{
+     background: green;
+     color: black;
+}
+.book-page.page-right.turn{
+    transform: rotateY(-180deg);
+
+}
+.next-page.back{
+    left: 1.5rem;
+}
+.services-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+.services-box .services-content{
+    flex: 1 1 10rem;
+    border: solid rgb(241, 8, 210);
+    border-radius: .5rem;
+    padding: .8rem .5rem 1.1rem;
+    text-align: center;
+}
+.services-content i {
+    font-size: 2.5rem;
+    color: rgb(161, 10, 236);
+}
+.services-content h3{
+    font-size: 1.1rem;
+}
+.services-content p{
+    margin: .2.5rem 0.8rem;
+}
+.services-content .btn{
+    width: 8rem;
+    height: 2.5rem;
+}
+.skill-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+}
+.skill-box .skills-content {
+    flex: 1 1 20rem;
+}
+.skills-content{
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-bottom: .6rem;
+}
+.skills-content.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+.skills-content .content span{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 5rem;
+    border: solid rgb(234, 0, 255);
+    border-radius: .3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.skills-content .content span i{
+    font-size: 3rem;
+    color: rgb(28, 252, 8);
+}
+.skills-content .content span{
+    box-shadow: rgb(182, 9, 188);
+}
+.portfolio-box .img-box{
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    border: solid rgb(191, 0, 255);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.portfolio-box .img-box img{
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.portfolio-box .img-box:hover img {
+    transform: scale(1.1);
+}
+.portfolio-box .info-box{
+    margin: 1rem 0 1.5rem;
+}
+.portfolio-box .info-box .info-title {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 1rem;
+}
+.portfolio-box .info-box .info-title h3 {
+    font-size: 1.3rem;
+}
+.portfolio-box .info-box .info-title a {
+    display: flex;
+    align-items: center;
+    color: rgb(238, 8, 241);
+}
+.portfolio-box .info-box .info-title a i {
+    margin-left: .3rem;
+}
+.portfolio-box .info-box p:nth-of-type(1) {
+    font-weight: 600;
+}
+.portfolio-box .bnt-box {
+    display: flex;
+    justify-content: center;
+}
+.portfolio-box .bnt-box .btn{
+    margin: 0 1.15rem;
+}
+.contact-box{
+    text-align: center;
+}
+.contact-box .field{
+    width: 100%;
+    background: rgb(252, 251, 249);
+    border: solid rgb(234, 0, 255);
+    border-radius: .3rem;
+    padding: .8rem;
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+.contact-box .field::placeholder{
+    color: blueviolet;
+}
+.contact-box textarea{
+    resize: none;
+    height: 15rem;
+}
+.contact-box .btn {
+    cursor: pointer;
+}
+.back-profile {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: solid rgb(234, 0, 255);
+    border-radius: .3rem;
+    font-size: 1.1rem;
+    color: rgb(124, 3, 230);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-profile p{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.5);
+    font-size: 1rem;
+    opacity: 0;
+    color: rgb(3, 3, 3);
+}
+.back-profile:hover{
+    background: rgb(3, 239, 168);
+    color: rgb(255, 255, 255);
+}
+.back-profile:hover p{
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    top: -1.8rem;
+}
